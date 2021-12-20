@@ -1,3 +1,5 @@
+import katieZaferes from '../images/katie-zaferes.png';
+import star from '../images/star.png';
 /*
 Challenge: Build the Card component
 For now, hard-code in the data (like 
@@ -19,6 +21,16 @@ Notes:
 
 export default function Card() {
     return (
-        <h1>Replace this</h1>
+      <div className='card'>
+        <img className='card--image' src={katieZaferes} alt='Katie Zaferes' ></img>
+        <div className='card--stats'>
+          <img src={star} alt='Star rating'></img>
+          <span>5.0</span>
+          <span className='gray'>(6)</span>
+          <span className='gray'> • USA</span>
+        </div>
+        <p>Life Lessons with Katie Zaferes</p>
+        <p><span className='bold'>From $136</span> / person</p>
+      </div>
     )
 }
