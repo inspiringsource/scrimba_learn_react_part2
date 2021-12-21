@@ -1,4 +1,3 @@
-import katieZaferes from '../images/katie-zaferes.png';
 import star from '../images/star.png';
 /*
 Challenge: Build the Card component
@@ -19,18 +18,19 @@ Notes:
   this data into the component.
 */
 
-export default function Card() {
+export default function Card(props) {
+  console.log(props)
     return (
       <div className='card'>
-        <img className='card--image' src={katieZaferes} alt='Katie Zaferes' ></img>
+        <img className='card--image' src={require(`../images/${props.imgName}`)} alt='Katie Zaferes' ></img>
         <div className='card--stats'>
           <img src={star} alt='Star rating'></img>
-          <span>5.0</span>
-          <span className='gray'>(6)</span>
-          <span className='gray'> • USA</span>
+          <span>{props.rating}</span>
+          <span className='gray'>{props.reviewCount}</span>
+          <span className='gray'> • {props.country}</span>
         </div>
-        <p>Life Lessons with Katie Zaferes</p>
-        <p><span className='bold'>From $136</span> / person</p>
+        <p>{props.title}</p>
+        <p><span className='bold'>From $ {props.price}</span> / person</p>
       </div>
     )
 }
